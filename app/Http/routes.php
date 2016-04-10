@@ -11,6 +11,17 @@
 |
 */
 
+Route::get('produtos',['as'=>'produtos', function(){
+
+    echo Route::getCurrentRoute()->getPath();
+
+    return "Produtos";
+}]);
+
+//redirect()->route('produtos');
+
+//echo route('produtos');die;
+
 Route::pattern('id', '[0-9]+');
 
 Route::get('/', function () {
