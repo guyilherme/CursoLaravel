@@ -11,12 +11,20 @@
 |
 */
 
+Route::pattern('id', '[0-9]+');
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('exemplo', 'InicialController@exemplo');
+Route::get('exemplo', 'InicialController@exemplo');
 
-Route::match(['get','post'], '/exemplo2', function(){
+Route::match(['get','post'], 'exemplo2', function(){
     return "Exemplo 2";
+});
+
+Route::get('user/{id?}', function($id = null){
+    if($id)
+        return "Olá $id";
+   return "Nâo possue Parametro no link";
 });
