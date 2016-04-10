@@ -15,4 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('exemplo', 'InicialController@exemplo');
+Route::post('exemplo', 'InicialController@exemplo');
+
+Route::match(['get','post'], '/exemplo2', function(){
+    return "Exemplo 2";
+});

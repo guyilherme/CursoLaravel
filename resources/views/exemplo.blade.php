@@ -39,6 +39,9 @@
 <div class="container">
     <div class="content">
         <div class="title">
+            Listagem abaixo é pegando do banco:
+        </div>
+        <div class="title">
             <ul>
             @foreach($categorias as $categoria)
                 <li> {{$categoria->nome}}</li>
