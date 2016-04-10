@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Laravel</title>
+    <title>Laravel Curso</title>
 
     <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
@@ -31,14 +31,20 @@
         }
 
         .title {
-            font-size: 96px;
+            font-size: 24px;
         }
     </style>
 </head>
 <body>
 <div class="container">
     <div class="content">
-        <div class="title">Exemplo 1</div>
+        <div class="title">
+            <ul>
+            @foreach($categorias as $categoria)
+                <li> {{$categoria->nome}}</li>
+            @endforeach
+            </ul>
+        </div>
     </div>
 </div>
 </body>
