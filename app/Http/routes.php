@@ -61,4 +61,5 @@ Route::get('user/{id?}', function($id = null){
 });
 
 Route::get('categoria', 'CategoriaController@index');
+Route::post('categoria', 'CategoriaController@salvar');
 Route::get('categoria/criar', 'CategoriaController@criar');

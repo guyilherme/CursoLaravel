@@ -27,4 +27,11 @@ class CategoriaController extends Controller
     public function criar(){
         return view('categoria.criar');
     }
+
+    public function salvar(Request $request){
+        $input = $request->all();
+        $categoria = $this->categoriaModel->fill($input);
+        $categoria->save();
+        return  redirect('categoria');
+    }
 }

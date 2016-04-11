@@ -4,7 +4,7 @@
     <div class="row">
         <div class="large-12 medium-12 small-12 columns">
             <div class="title">Criação de Categorias</div>
-                {!! Form::open() !!}
+                {!! Form::open(['url'=>'categoria']) !!}
                     {!! Form::label('nome', 'Nome:') !!}
                     {!! Form::text('nome', null) !!}
                     {!! Form::label('descricao', 'Descrição:') !!}
