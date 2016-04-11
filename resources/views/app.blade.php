@@ -24,7 +24,6 @@
         }
 
         .container {
-            text-align: center;
             display: table-cell;
             vertical-align: middle;
         }
@@ -35,7 +34,11 @@
         }
 
         .title {
-            font-size: 96px;
+            font-size: 50px;
+        }
+
+        label {
+            font-size: 30px;
         }
     </style>
 </head>
