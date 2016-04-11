@@ -28,7 +28,7 @@ class RouteServiceProvider extends ServiceProvider
 
         parent::boot($router);
 
-        $router->model('categoria', 'CursoLaravel\Categoria');
+        //$router->model('categoria', 'CursoLaravel\Categoria');
 
     }
 

@@ -12,7 +12,7 @@
 */
 
 
-Route::get('categoria/{categoria}', function(\CursoLaravel\Categoria $categoria){
+/*Route::get('categoria/{categoria}', function(\CursoLaravel\Categoria $categoria){
 
     echo $categoria, "<br />";
     //dd($categoria);
@@ -24,7 +24,7 @@ Route::get('categorias/{nome}', function($nome){
 
     $categorias  = \CursoLaravel\Categoria::where('nome', $nome)->first();
     return $categorias->nome;
-});
+});*/
 
 
 Route::group(['prefix'=>'admin'], function(){
@@ -59,3 +59,5 @@ Route::get('user/{id?}', function($id = null){
         return "Olá $id";
    return "Nâo possue Parametro no link";
 });
+
+Route::get('categoria', 'CategoriaController@index');
