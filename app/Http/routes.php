@@ -61,3 +61,4 @@ Route::get('user/{id?}', function($id = null){
 });
 
 Route::get('categoria', 'CategoriaController@index');
+Route::get('categoria/criar', 'CategoriaController@criar');
