@@ -11,6 +11,22 @@
 |
 */
 
+
+Route::get('categoria/{categoria}', function(\CursoLaravel\Categoria $categoria){
+
+    echo $categoria, "<br />";
+    //dd($categoria);
+    return $categoria->nome;
+
+});
+
+Route::get('categorias/{nome}', function($nome){
+
+    $categorias  = \CursoLaravel\Categoria::where('nome', $nome)->first();
+    return $categorias->nome;
+});
+
+
 Route::group(['prefix'=>'admin'], function(){
 
 Route::get('produtos',['as'=>'produtos', function(){
