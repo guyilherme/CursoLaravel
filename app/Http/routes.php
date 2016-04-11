@@ -11,12 +11,16 @@
 |
 */
 
+Route::group(['prefix'=>'admin'], function(){
+
 Route::get('produtos',['as'=>'produtos', function(){
 
     echo Route::getCurrentRoute()->getPath();
 
-    return "Produtos";
+    return "<br /> Produtos";
 }]);
+
+});
 
 //redirect()->route('produtos');
 
