@@ -62,5 +62,7 @@ Route::get('user/{id?}', function($id = null){
 
 Route::get('categoria',['as'=>'categoria','uses'=>'CategoriaController@index']);
 Route::post('categoria', ['as'=>'categoria.salvar','uses'=>'CategoriaController@salvar']);
+Route::put('categoria/{id}/atualizar', ['as'=>'categoria.atualizar','uses'=>'CategoriaController@atualizar']);
 Route::get('categoria/criar', ['as'=>'categoria.criar','uses'=>'CategoriaController@criar']);
 Route::get('categoria/{id}/apagar', ['as'=>'categoria.apagar','uses'=>'CategoriaController@apagar']);
+Route::get('categoria/{id}/editar', ['as'=>'categoria.editar','uses'=>'CategoriaController@editar']);
