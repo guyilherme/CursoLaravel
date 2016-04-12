@@ -29,12 +29,12 @@ Route::get('categorias/{nome}', function($nome){
 
 Route::group(['prefix'=>'admin'], function(){
 
-Route::get('produtos',['as'=>'produtos', function(){
+    Route::get('produtos',['as'=>'produtos', function(){
 
-    echo Route::getCurrentRoute()->getPath();
+        echo Route::getCurrentRoute()->getPath();
 
-    return "<br /> Produtos";
-}]);
+        return "<br /> Produtos";
+    }]);
 
 });
 
@@ -57,9 +57,10 @@ Route::match(['get','post'], 'exemplo2', function(){
 Route::get('user/{id?}', function($id = null){
     if($id)
         return "Olá $id";
-   return "Nâo possue Parametro no link";
+    return "Nâo possue Parametro no link";
 });
 
-Route::get('categoria', 'CategoriaController@index');
-Route::post('categoria', 'CategoriaController@salvar');
-Route::get('categoria/criar', 'CategoriaController@criar');
+Route::get('categoria',['as'=>'categoria','uses'=>'CategoriaController@index']);
+Route::post('categoria', ['as'=>'categoria.salvar','uses'=>'CategoriaController@salvar']);
+Route::get('categoria/criar', ['as'=>'categoria.criar','uses'=>'CategoriaController@criar']);
+Route::get('categoria/{id}/apagar', ['as'=>'categoria.apagar','uses'=>'CategoriaController@apagar']);

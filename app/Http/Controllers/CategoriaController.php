@@ -28,10 +28,15 @@ class CategoriaController extends Controller
         return view('categoria.criar');
     }
 
-    public function salvar(Request $request){
+    public function salvar(Requests\CategoriaRequest $request){
         $input = $request->all();
         $categoria = $this->categoriaModel->fill($input);
         $categoria->save();
-        return  redirect('categoria');
+        return  redirect()->route('categoria');
+    }
+
+    public  function apagar($id){
+        $this->categoriaModel->find($id)->delete();
+        return  redirect()->route('categoria');
     }
 }
