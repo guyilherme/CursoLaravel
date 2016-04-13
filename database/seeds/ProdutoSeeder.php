@@ -20,9 +20,10 @@ class ProdutoSeeder extends Seeder
         $faker=Faker::create();
         foreach (range(1,15)as $i) {
             Produtos::create([
-                'nome' => $faker->word,
+                'nome' => $faker->word(),
                 'descricao' => $faker->sentence($nbWords = 6, $variableNbWords = true),
-                'preco' => $faker->randomFloat(['nbMaxDecimals = 1', '$min = 0', '$max = null'] )
+                'preco' => $faker->randomNumber(2),
+                'categoria_id' => $faker->numberBetween(1,15)
             ]);
         }
     }
